@@ -8,7 +8,7 @@ export function Hero() {
         className="absolute inset-0 -z-10 opacity-40"
         style={{
           background:
-            'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(217 91% 60% / 0.4), transparent)',
+            'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.4), transparent)',
         }}
         aria-hidden
       />

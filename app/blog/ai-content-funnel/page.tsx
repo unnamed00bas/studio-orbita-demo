@@ -61,7 +61,7 @@ export default function BlogPostPage() {
                 {post.category}
               </span>
               <span className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
+                <Clock className="h-3 w-3 text-primary" />
                 {post.readingTime}
               </span>
               <time dateTime={post.publishedAt}>

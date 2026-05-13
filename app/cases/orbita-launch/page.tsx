@@ -87,7 +87,7 @@ export default function CasePage() {
                 >
                   <div className="text-3xl font-bold text-primary">{m.value}</div>
                   {m.delta && (
-                    <div className="mt-1 text-xs font-medium text-green-500">
+                    <div className="mt-1 text-xs font-medium text-primary">
                       {m.delta}
                     </div>
                   )}

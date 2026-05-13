@@ -37,11 +37,11 @@ export default function GuidesPage() {
               <p className="mb-6 text-muted-foreground">{g.description}</p>
               <div className="mb-6 flex gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="h-4 w-4 text-primary" />
                   {g.duration}
                 </div>
                 <div className="flex items-center gap-2">
-                  <BarChart3 className="h-4 w-4" />
+                  <BarChart3 className="h-4 w-4 text-primary" />
                   {g.level}
                 </div>
               </div>

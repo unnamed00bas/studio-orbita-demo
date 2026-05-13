@@ -5,32 +5,69 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 0 0% 13%;
+
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --primary: 217 91% 60%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 203 95% 37%;
     --primary-foreground: 0 0% 100%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
-    --border: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --primary-bright: 203 95% 47%;
+
+    --secondary: 200 100% 95%;
+    --secondary-foreground: 203 95% 28%;
+
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 47%;
+
+    --accent: 0 0% 89%;
+    --accent-foreground: 203 95% 28%;
+
+    --destructive: 356 70% 53%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 203 95% 37%;
+
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 5%;
-    --muted: 217 33% 12%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 14%;
-    --accent-foreground: 210 40% 98%;
-    --border: 217 33% 18%;
-    --ring: 217 91% 60%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    /* В тёмной теме --primary остаётся тёмным для кнопок (≥ 4.5:1 с белым
+       текстом), а текст-ссылка поверх тёмных поверхностей использует
+       --primary-bright через override `.dark .text-primary` ниже. */
+    --primary: 203 95% 37%;
+    --primary-foreground: 0 0% 100%;
+    --primary-bright: 203 95% 57%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 64%;
+
+    --muted: 0 0% 23%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 0 0% 29%;
+    --accent-foreground: 0 0% 89%;
+
+    --destructive: 356 58% 43%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 29%;
+    --input: 0 0% 29%;
+    --ring: 203 95% 37%;
   }
 
   html {
@@ -47,6 +84,12 @@
   ::selection {
     background-color: hsl(var(--primary) / 0.3);
   }
+
+  /* Текст-поверх-тёмной-поверхности использует более светлый оттенок
+     синего, чтобы держать контраст ≥ 4.5:1 vs --card (#1a1a1a). */
+  .dark .text-primary {
+    color: hsl(var(--primary-bright));
+  }
 }
 
 @layer utilities {
@@ -62,14 +105,42 @@
     text-wrap: balance;
   }
 
+  /* Монохромный синий градиент — без второстепенных оттенков. */
   .gradient-text {
     background: linear-gradient(
       135deg,
       hsl(var(--primary)) 0%,
-      hsl(280 80% 65%) 100%
+      hsl(var(--primary-bright)) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+
+  .gradient-bg {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary-bright)) 100%
+    );
+  }
+}
+
+/* Font Awesome Icons Styling */
+.social-icon {
+  color: hsl(var(--primary));
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: hsl(var(--primary-bright));
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+.contact-icon {
+  color: hsl(var(--primary));
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
 }

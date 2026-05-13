@@ -37,7 +37,7 @@ export default function BlogPage() {
                   {p.category}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
+                  <Clock className="h-3 w-3 text-primary" />
                   {p.readingTime}
                 </span>
                 <time dateTime={p.publishedAt}>

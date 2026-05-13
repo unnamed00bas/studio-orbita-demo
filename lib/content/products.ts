@@ -56,7 +56,7 @@ export const products: Product[] = [
       'Time-to-first-byte < 400 мс',
     ],
     priceFrom: 120000,
-    glowColor: 'purple',
+    glowColor: 'blue',
     icon: 'layout-dashboard',
   },
   {
@@ -79,7 +79,7 @@ export const products: Product[] = [
       'Попадание в выдачу AI-поисковиков',
     ],
     priceFrom: 65000,
-    glowColor: 'orange',
+    glowColor: 'blue',
     icon: 'feather',
   },
 ];

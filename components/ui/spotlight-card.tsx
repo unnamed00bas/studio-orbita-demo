@@ -8,23 +8,15 @@ type GlowColor = 'blue' | 'purple' | 'green' | 'red' | 'orange';
 interface GlowCardProps {
   children: ReactNode;
   className?: string;
+  /** Kept for API compatibility — все варианты теперь рендерятся в монохромный синий. */
   glowColor?: GlowColor;
   width?: string | number;
   height?: string | number;
 }
 
-const glowColorMap: Record<GlowColor, { base: number; spread: number }> = {
-  blue: { base: 220, spread: 200 },
-  purple: { base: 280, spread: 300 },
-  green: { base: 140, spread: 200 },
-  red: { base: 0, spread: 200 },
-  orange: { base: 30, spread: 200 },
-};
-
 export function GlowCard({
   children,
   className,
-  glowColor = 'blue',
   width,
   height,
 }: GlowCardProps) {
@@ -39,25 +31,19 @@ export function GlowCard({
       const y = e.clientY - rect.top;
       el.style.setProperty('--x', `${x}`);
       el.style.setProperty('--y', `${y}`);
-      el.style.setProperty('--xp', `${(e.clientX / window.innerWidth).toFixed(3)}`);
     };
     document.addEventListener('pointermove', onMove);
     return () => document.removeEventListener('pointermove', onMove);
   }, []);
 
-  const { base, spread } = glowColorMap[glowColor];
-
   const style = {
-    '--base': base,
-    '--spread': spread,
-    '--hue': `calc(${base} + var(--xp, 0) * ${spread})`,
     '--size': '260',
     '--spotlight-size': 'calc(var(--size) * 1px)',
     backgroundImage: `radial-gradient(
       var(--spotlight-size) var(--spotlight-size) at
       calc(var(--x, 0) * 1px)
       calc(var(--y, 0) * 1px),
-      hsl(var(--hue, 220) 90% 60% / 0.18),
+      hsl(var(--primary) / 0.22),
       transparent 70%
     )`,
     ...(width !== undefined && {

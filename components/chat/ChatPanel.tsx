@@ -67,7 +67,7 @@ export function ChatPanel({ onClose }: Props) {
             <button
               type="button"
               onClick={reset}
-              className="rounded-md p-1.5 text-muted-foreground transition hover:bg-accent hover:text-foreground"
+              className="rounded-md p-1.5 text-primary transition hover:bg-accent"
               aria-label="Очистить диалог"
             >
               <RotateCcw className="h-4 w-4" />
@@ -76,7 +76,7 @@ export function ChatPanel({ onClose }: Props) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md p-1.5 text-muted-foreground transition hover:bg-accent hover:text-foreground"
+            className="rounded-md p-1.5 text-primary transition hover:bg-accent"
             aria-label="Закрыть"
           >
             <X className="h-4 w-4" />
@@ -137,7 +137,7 @@ export function ChatPanel({ onClose }: Props) {
         ))}
 
         {error && (
-          <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200">
+          <div className="rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-xs text-destructive">
             Ошибка: {error}
           </div>
         )}

@@ -62,11 +62,11 @@ export default function GuidePage() {
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
+                <Clock className="h-4 w-4 text-primary" />
                 {guide.duration}
               </span>
               <span className="flex items-center gap-2">
-                <BarChart3 className="h-4 w-4" />
+                <BarChart3 className="h-4 w-4 text-primary" />
                 Уровень: {guide.level}
               </span>
             </div>

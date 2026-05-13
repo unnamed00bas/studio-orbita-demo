@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container-wide grid gap-8 py-12 md:grid-cols-4">
         <div>
           <div className="mb-3 flex items-center gap-2 text-lg font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-purple-500 text-primary-foreground">
+            <span className="grid h-8 w-8 place-items-center rounded-lg gradient-bg text-primary-foreground">
               ✦
             </span>
             <span>Студия Орбита</span>

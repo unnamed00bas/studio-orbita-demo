@@ -23,7 +23,7 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 text-lg font-bold tracking-tight"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-purple-500 text-primary-foreground">
+          <span className="grid h-8 w-8 place-items-center rounded-lg gradient-bg text-primary-foreground">
             ✦
           </span>
           <span>
@@ -56,7 +56,7 @@ export function Header() {
           className="rounded-md p-2 md:hidden"
           aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <X className="h-5 w-5 text-primary" /> : <Menu className="h-5 w-5 text-primary" />}
         </button>
       </div>
 

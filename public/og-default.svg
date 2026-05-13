@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0e1a"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(80, 80)">
+    <rect width="56" height="56" rx="12" fill="url(#accent)"/>
+    <text x="78" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#ffffff">Студия Орбита</text>
+  </g>
+  <text x="80" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="80" font-weight="800" fill="#ffffff">
+    <tspan x="80" dy="0">Сайты, контент и</tspan>
+    <tspan x="80" dy="100" fill="url(#accent)">AI-консультанты</tspan>
+    <tspan x="80" dy="100" fill="#ffffff">на потоке</tspan>
+  </text>
+  <text x="80" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#94a3b8">
+    Next.js 14 · TypeScript · Tailwind · Anthropic API
+  </text>
+</svg>

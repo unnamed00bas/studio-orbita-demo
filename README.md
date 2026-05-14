@@ -252,7 +252,7 @@ if (!apiKey) {
 - 💼 **Кейсы / портфолио:** [promaren.ru/cases](https://promaren.ru/cases/)
 - 🔗 **LinkedIn:** [linkedin.com/in/marinapogodina](https://linkedin.com/in/marinapogodina/)
 - 💬 **Telegram:** [@Marinochcin](https://t.me/Marinochcin)
-- 🅼 **MAX:** [написать в MAX](https://max.ru/u/f9LHodD0cOJlEZP133QjIvhWolAnTSdXN2strjqN-TXqy9Pu-boUGo2WhsQ)
+- 💬 **MAX:** [написать в MAX](https://max.ru/u/f9LHodD0cOJlEZP133QjIvhWolAnTSdXN2strjqN-TXqy9Pu-boUGo2WhsQ)
 - ✉️ **Email:** [info@promaren.ru](mailto:info@promaren.ru)
 
 > Открыта к разговору про **AI-engineering, automation lead, ИБ-консалтинг с AI-фокусом** и **технические тимлид-роли**. Если этот репозиторий вам интересен — напишите, расскажу про боевые кейсы под NDA.

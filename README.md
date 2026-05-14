@@ -1,18 +1,20 @@
 # Студия Орбита — демо-проект
 
+[![Production: promaren.ru](https://img.shields.io/badge/Production-promaren.ru-0573b5?style=flat&labelColor=000000)](https://promaren.ru)
+[![Author: Marina Pogodina](https://img.shields.io/badge/Author-Marina%20Pogodina-3aa7e0?style=flat&labelColor=000000)](https://promaren.ru/about/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=nextdotjs)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Anthropic API](https://img.shields.io/badge/Anthropic-Messages%20API-d97757)](https://www.anthropic.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> **🌍 Live demo:** [studio-orbita-demo.vercel.app](https://studio-orbita-demo.vercel.app) <!-- замените на ваш URL после деплоя -->
+> **🌍 Live demo:** [studio-orbita-demo.vercel.app](https://studio-orbita-demo.vercel.app) &nbsp;·&nbsp; **🏢 Production:** [promaren.ru](https://promaren.ru) &nbsp;·&nbsp; **👤 Author:** [Marina Pogodina](https://promaren.ru/about/) <!-- замените URL демо после деплоя -->
 
 Многостраничный сайт-визитка для условной «Студии Орбита» на **Next.js 14 + TypeScript + Tailwind CSS** с потоковым **AI-консультантом**, техническим SEO и оптимизацией под AI-поисковики (GEO).
 
-Это **демо-репозиторий** для портфолио. Все цены, кейсы и контакты — условные.
+> 🎯 **Зачем этот репозиторий.** Открытый proof-of-work автора [PROMAREN](https://promaren.ru) — упрощённый публичный клон стека, на котором построены коммерческие AI-проекты студии. Боевой код под NDA; здесь — фиктивный бренд «Студия Орбита», но **архитектурные решения, паттерны кода и инфраструктура — рабочие**. Можно склонировать, прочитать [Design decisions](#design-decisions--почему-так) и запустить локально за минуту. Все цены, кейсы и контакты в коде — условные.
 
-> **English TL;DR** — A multi-page demo site for a fictional studio brand, built with **Next.js 14 App Router**, **TypeScript** (strict), **Tailwind CSS**, and a streaming **AI consultant** powered by the **Anthropic Messages API** with prompt caching. Includes full technical SEO and **GEO (Generative Engine Optimization)** — JSON-LD (Organization, Article, Product, FAQPage, HowTo, BreadcrumbList), dynamic sitemap, and `robots.txt` with explicit allow for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, YandexBot). Built as a portfolio piece — all prices, cases, and contacts are fictional. MIT licensed.
+> **English TL;DR** — A multi-page demo site for a fictional studio brand, built with **Next.js 14 App Router**, **TypeScript** (strict), **Tailwind CSS**, and a streaming **AI consultant** powered by the **Anthropic Messages API** with prompt caching. Includes full technical SEO and **GEO (Generative Engine Optimization)** — JSON-LD (Organization, Article, Product, FAQPage, HowTo, BreadcrumbList), dynamic sitemap, and `robots.txt` with explicit allow for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, YandexBot). Built as an **open-source proof-of-work** by [Marina Pogodina](https://promaren.ru/about/), founder of [PROMAREN](https://promaren.ru) — 16+ years in IT audit & InfoSec (Aeroflot, MTS, X5, Deloitte, PwC), now building ethical AI automation. All prices, cases, and contacts in this demo are fictional. MIT licensed. See [About the author](#-об-авторе).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/<your-github-username>/studio-orbita-demo&env=ANTHROPIC_API_KEY&envDescription=Anthropic%20API%20key%20for%20the%20streaming%20AI%20consultant.%20Optional%20%E2%80%94%20without%20it%20the%20chat%20falls%20back%20to%20a%20stub%20response.&envLink=https://console.anthropic.com/)
 
@@ -213,6 +215,45 @@ if (!apiKey) {
 4. Deploy
 
 Также проект работает на любом Node.js-хостинге (`npm run build && npm start`) и в Docker.
+
+---
+
+## 👤 Об авторе
+
+**Marina Pogodina** — founder & Head of AI & Automation в [**PROMAREN**](https://promaren.ru), экосистеме content & process automation с compliance-first архитектурой.
+
+### Бэкграунд
+
+- **16+ лет** в IT-аудите, риск-менеджменте и информационной безопасности
+- **200+ проведённых аудитов** в крупном бизнесе: **Аэрофлот, МТС, X5 Retail Group, Renova, Deloitte, PwC**
+- Эксперт по **SOX, COBIT 2019, COSO, ISO/IEC 27001, 152-ФЗ, GDPR**
+
+### Сегодня — PROMAREN
+
+Объединяю аудиторскую дисциплину и LLM-агентов: RAG-системы, AI-консультанты на Claude / GPT, автоматизация процессов на n8n / Make / Zapier, клиентские интерфейсы на Next.js + Supabase. White-data архитектура под РФ.
+
+| Метрика | Значение |
+|---|---|
+| Сокращение ручного труда в проектах автоматизации | **до 85 %** |
+| Срок окупаемости внедрения | **2–4 недели** |
+| Опыт в IT-аудите / ИБ | **16+ лет** |
+
+**Стек:** Python · TypeScript / JavaScript · Next.js · Supabase · Anthropic API · n8n · Make · Zapier · Cursor
+
+### Что показывает этот репозиторий работодателю
+
+- Я закрываю стек **от архитектуры до деплоя** в одиночку: Next.js 14 App Router (RSC + SSE) · TypeScript strict · Anthropic Messages API с prompt caching · полный технический SEO + GEO под AI-поисковики.
+- Каждое решение [объяснено в README](#design-decisions--почему-так): почему SSE, а не WebSocket; почему детерминированный системный промпт; почему RSC по умолчанию — это не догма, а измеримый First Load JS.
+- Код — production-grade: strict TS, fail-soft API без ключа, типизированные JSON-LD генераторы, секьюрити-заголовки, чистый `tsc --noEmit`.
+
+### Контакты
+
+- 🌐 **Сайт / портфолио:** [promaren.ru/about](https://promaren.ru/about/)
+- 💼 **LinkedIn:** [linkedin.com/in/marinapogodina](https://linkedin.com/in/marinapogodina/)
+- 💬 **Telegram:** [@promaren](https://t.me/promaren)
+- ✉️ **Email:** [info@promaren.ru](mailto:info@promaren.ru)
+
+> Открыта к разговору про **AI-engineering, automation lead, ИБ-консалтинг с AI-фокусом** и **технические тимлид-роли**. Если этот репозиторий вам интересен — напишите, расскажу про боевые кейсы под NDA.
 
 ---
 

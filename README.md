@@ -8,7 +8,7 @@
 [![Anthropic API](https://img.shields.io/badge/Anthropic-Messages%20API-d97757)](https://www.anthropic.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> **🌍 Live demo:** [studio-orbita-demo.vercel.app](https://studio-orbita-demo.vercel.app) &nbsp;·&nbsp; **🏢 Production:** [promaren.ru](https://promaren.ru) &nbsp;·&nbsp; **👤 Author:** [Marina Pogodina](https://promaren.ru/about/) <!-- замените URL демо после деплоя -->
+> **🌍 Live demo:** [studio-orbita-demo.vercel.app](https://studio-orbita-demo.vercel.app) &nbsp;·&nbsp; **🏢 Production:** [promaren.ru](https://promaren.ru) &nbsp;·&nbsp; **👤 Author:** [Marina Pogodina](https://promaren.ru/about/)
 
 Многостраничный сайт-визитка для условной «Студии Орбита» на **Next.js 14 + TypeScript + Tailwind CSS** с потоковым **AI-консультантом**, техническим SEO и оптимизацией под AI-поисковики (GEO).
 
@@ -16,7 +16,7 @@
 
 > **English TL;DR** — A multi-page demo site for a fictional studio brand, built with **Next.js 14 App Router**, **TypeScript** (strict), **Tailwind CSS**, and a streaming **AI consultant** powered by the **Anthropic Messages API** with prompt caching. Includes full technical SEO and **GEO (Generative Engine Optimization)** — JSON-LD (Organization, Article, Product, FAQPage, HowTo, BreadcrumbList), dynamic sitemap, and `robots.txt` with explicit allow for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, YandexBot). Built as an **open-source proof-of-work** by [Marina Pogodina](https://promaren.ru/about/), founder of [PROMAREN](https://promaren.ru) — 16+ years in IT audit & InfoSec (Aeroflot, MTS, X5, Deloitte, PwC), now building ethical AI automation. All prices, cases, and contacts in this demo are fictional. MIT licensed. See [About the author](#-об-авторе).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/<your-github-username>/studio-orbita-demo&env=ANTHROPIC_API_KEY&envDescription=Anthropic%20API%20key%20for%20the%20streaming%20AI%20consultant.%20Optional%20%E2%80%94%20without%20it%20the%20chat%20falls%20back%20to%20a%20stub%20response.&envLink=https://console.anthropic.com/)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/unnamed00bas/studio-orbita-demo&env=ANTHROPIC_API_KEY&envDescription=Anthropic%20API%20key%20for%20the%20streaming%20AI%20consultant.%20Optional%20%E2%80%94%20without%20it%20the%20chat%20falls%20back%20to%20a%20stub%20response.&envLink=https://console.anthropic.com/)
 
 ---
 
@@ -248,9 +248,11 @@ if (!apiKey) {
 
 ### Контакты
 
-- 🌐 **Сайт / портфолио:** [promaren.ru/about](https://promaren.ru/about/)
-- 💼 **LinkedIn:** [linkedin.com/in/marinapogodina](https://linkedin.com/in/marinapogodina/)
-- 💬 **Telegram:** [@promaren](https://t.me/promaren)
+- 👤 **Обо мне:** [promaren.ru/about](https://promaren.ru/about/)
+- 💼 **Кейсы / портфолио:** [promaren.ru/cases](https://promaren.ru/cases/)
+- 🔗 **LinkedIn:** [linkedin.com/in/marinapogodina](https://linkedin.com/in/marinapogodina/)
+- 💬 **Telegram:** [@Marinochcin](https://t.me/Marinochcin)
+- 🅼 **MAX:** [написать в MAX](https://max.ru/u/f9LHodD0cOJlEZP133QjIvhWolAnTSdXN2strjqN-TXqy9Pu-boUGo2WhsQ)
 - ✉️ **Email:** [info@promaren.ru](mailto:info@promaren.ru)
 
 > Открыта к разговору про **AI-engineering, automation lead, ИБ-консалтинг с AI-фокусом** и **технические тимлид-роли**. Если этот репозиторий вам интересен — напишите, расскажу про боевые кейсы под NDA.

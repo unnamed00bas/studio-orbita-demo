@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Корень проекта задан явно. Next 16 ищет его сам — по ближайшему
+  // package-lock.json вверх по дереву, — и в монорепозитории поднимается выше
+  // этого каталога: сборка начинала тянуть файлы соседнего проекта и падала на
+  // чужих импортах. В отдельно опубликованном репозитории значение то же самое,
+  // поэтому строка не мешает и там.
+  turbopack: { root: __dirname },
+  outputFileTracingRoot: __dirname,
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,

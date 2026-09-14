@@ -2,7 +2,7 @@
 
 [![Production: promaren.ru](https://img.shields.io/badge/Production-promaren.ru-0573b5?style=flat&labelColor=000000)](https://promaren.ru)
 [![Author: Marina Pogodina](https://img.shields.io/badge/Author-Marina%20Pogodina-3aa7e0?style=flat&labelColor=000000)](https://promaren.ru/about/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=nextdotjs)](https://nextjs.org)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Anthropic API](https://img.shields.io/badge/Anthropic-Messages%20API-d97757)](https://www.anthropic.com/)
@@ -10,11 +10,11 @@
 
 > **🌍 Live demo:** [studio-orbita-demo.vercel.app](https://studio-orbita-demo.vercel.app) &nbsp;·&nbsp; **🏢 Production:** [promaren.ru](https://promaren.ru) &nbsp;·&nbsp; **👤 Author:** [Marina Pogodina](https://promaren.ru/about/)
 
-Многостраничный сайт-визитка для условной «Студии Орбита» на **Next.js 14 + TypeScript + Tailwind CSS** с потоковым **AI-консультантом**, техническим SEO и оптимизацией под AI-поисковики (GEO).
+Многостраничный сайт-визитка для условной «Студии Орбита» на **Next.js 16 + TypeScript + Tailwind CSS** с потоковым **AI-консультантом**, техническим SEO и оптимизацией под AI-поисковики (GEO).
 
 > 🎯 **Зачем этот репозиторий.** Открытый proof-of-work автора [PROMAREN](https://promaren.ru) — упрощённый публичный клон стека, на котором построены коммерческие AI-проекты студии. Боевой код под NDA; здесь — фиктивный бренд «Студия Орбита», но **архитектурные решения, паттерны кода и инфраструктура — рабочие**. Можно склонировать, прочитать [Design decisions](#design-decisions--почему-так) и запустить локально за минуту. Все цены, кейсы и контакты в коде — условные.
 
-> **English TL;DR** — A multi-page demo site for a fictional studio brand, built with **Next.js 14 App Router**, **TypeScript** (strict), **Tailwind CSS**, and a streaming **AI consultant** powered by the **Anthropic Messages API** with prompt caching. Includes full technical SEO and **GEO (Generative Engine Optimization)** — JSON-LD (Organization, Article, Product, FAQPage, HowTo, BreadcrumbList), dynamic sitemap, and `robots.txt` with explicit allow for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, YandexBot). Built as an **open-source proof-of-work** by [Marina Pogodina](https://promaren.ru/about/), founder of [PROMAREN](https://promaren.ru) — 16+ years in IT audit & InfoSec (Aeroflot, MTS, X5, Deloitte, PwC), now building ethical AI automation. All prices, cases, and contacts in this demo are fictional. MIT licensed. See [About the author](#-об-авторе).
+> **English TL;DR** — A multi-page demo site for a fictional studio brand, built with **Next.js 16 App Router**, **TypeScript** (strict), **Tailwind CSS**, and a streaming **AI consultant** powered by the **Anthropic Messages API** with prompt caching. Includes full technical SEO and **GEO (Generative Engine Optimization)** — JSON-LD (Organization, Article, Product, FAQPage, HowTo, BreadcrumbList), dynamic sitemap, and `robots.txt` with explicit allow for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, YandexBot). Built as an **open-source proof-of-work** by [Marina Pogodina](https://promaren.ru/about/), founder of [PROMAREN](https://promaren.ru) — 16+ years in IT audit & InfoSec (Aeroflot, MTS, X5, Deloitte, PwC), now building ethical AI automation. All prices, cases, and contacts in this demo are fictional. MIT licensed. See [About the author](#-об-авторе).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/unnamed00bas/studio-orbita-demo&env=ANTHROPIC_API_KEY&envDescription=Anthropic%20API%20key%20for%20the%20streaming%20AI%20consultant.%20Optional%20%E2%80%94%20without%20it%20the%20chat%20falls%20back%20to%20a%20stub%20response.&envLink=https://console.anthropic.com/)
 
@@ -45,7 +45,7 @@
 
 ## Стек
 
-- **Next.js 14** (App Router) + **TypeScript** (strict mode)
+- **Next.js 16** (App Router) + **TypeScript** (strict mode)
 - **Tailwind CSS** с CSS-переменными темы
 - **Framer Motion**, **Lucide React** — анимации и иконки
 - **`@anthropic-ai/sdk`** — потоковая генерация ответов AI-консультанта
@@ -177,7 +177,7 @@ if (!apiKey) {
 
 ## Что показывает этот проект как навык
 
-- **Next.js 14 App Router** — RSC по умолчанию, Client Components только где нужно
+- **Next.js 16 App Router** — RSC по умолчанию, Client Components только где нужно
 - **TypeScript strict mode** — всё типизировано, никаких `any`
 - **Server-Sent Events streaming** — без websockets, low-latency UX
 - **Prompt caching** на стороне Anthropic — реальная экономия токенов
@@ -220,30 +220,32 @@ if (!apiKey) {
 
 ## 👤 Об авторе
 
-**Marina Pogodina** — founder & Head of AI & Automation в [**PROMAREN**](https://promaren.ru), экосистеме content & process automation с compliance-first архитектурой.
+Меня зовут Марина Погодина, я делаю [**PROMAREN**](https://promaren.ru): снимаю с малого и среднего бизнеса ручную работу — мини-приложения в MAX и Telegram, личные кабинеты, CRM, агенты над учётными системами.
 
-### Бэкграунд
+### Откуда взялась дисциплина в коде
 
-- **16+ лет** в IT-аудите, риск-менеджменте и информационной безопасности
-- **200+ проведённых аудитов** в крупном бизнесе: **МТС, Аэрофлот, X5 Retail Group, Renova, Ашан, ТРАСТ**
-- Проходила внешние аудиты **Deloitte** (SOX в МТС) и **PwC** (Quality Assurance в X5)
-- Эксперт по **SOX, COBIT 2019, COSO, ISO/IEC 27001, 152-ФЗ, GDPR**
+- **17 лет** в ИТ и управлении технологическими рисками, из них **14 лет** в аудите ИТ и внутреннем контроле
+- **Более 60 аудитов** ИТ и информационной безопасности для компаний топ-100
+- SOX, COBIT 2019, ISO/IEC 27001, 152-ФЗ, GDPR; работа со стороной регулятора и с BIG4
+- Отсюда привычка, видная и в этом демо: логи, разметка и проверки закладываются сразу, а не после первого разбора инцидента
 
-### Сегодня — PROMAREN
+### Условия работы — до договора, а не после
 
-Объединяю аудиторскую дисциплину и LLM-агентов: RAG-системы, AI-консультанты на Claude / GPT, автоматизация процессов на n8n / Make / Zapier, клиентские интерфейсы на Next.js + Supabase. White-data архитектура под РФ.
-
-| Метрика | Значение |
+| Показание | Значение |
 |---|---|
-| Сокращение ручного труда в проектах автоматизации | **до 85 %** |
-| Срок окупаемости внедрения | **2–4 недели** |
-| Опыт в IT-аудите / ИБ | **16+ лет** |
+| Разработка | от 200 000 ₽ |
+| Срок | от 4 недель |
+| Просрочка по моей вине | стоимость работ минус 20%, п. 3.2 договора |
+| Оплата | 50% перед этапом, 50% после приёмки |
+| Репозиторий | на вашем аккаунте с первого дня |
 
-**Стек:** Python · TypeScript / JavaScript · Next.js · Supabase · Anthropic API · n8n · Make · Zapier · Cursor
+[Образец договора](https://promaren.ru/legal/contract-sample.pdf) · [Цены](https://promaren.ru/prices/) · [Разборы запусков](https://promaren.ru/cases/)
+
+**Стек:** Python · TypeScript / JavaScript · Next.js · Supabase · Anthropic API · n8n · Make · Cursor
 
 ### Что показывает этот репозиторий работодателю
 
-- Я закрываю стек **от архитектуры до деплоя** в одиночку: Next.js 14 App Router (RSC + SSE) · TypeScript strict · Anthropic Messages API с prompt caching · полный технический SEO + GEO под AI-поисковики.
+- Я закрываю стек **от архитектуры до деплоя** в одиночку: Next.js 16 App Router (RSC + SSE) · TypeScript strict · Anthropic Messages API с prompt caching · полный технический SEO + GEO под AI-поисковики.
 - Каждое решение [объяснено в README](#design-decisions--почему-так): почему SSE, а не WebSocket; почему детерминированный системный промпт; почему RSC по умолчанию — это не догма, а измеримый First Load JS.
 - Код — production-grade: strict TS, fail-soft API без ключа, типизированные JSON-LD генераторы, секьюрити-заголовки, чистый `tsc --noEmit`.
 

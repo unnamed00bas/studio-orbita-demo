@@ -2,19 +2,19 @@
   "name": "studio-orbita-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "Демо-проект: многостраничный лендинг с продуктами, кейсами, блогом, гайдами, AI-консультантом и техническим SEO/GEO. Next.js 14 + TypeScript + Tailwind.",
+  "description": "Демо-проект: многостраничный лендинг с продуктами, кейсами, блогом, гайдами, AI-консультантом и техническим SEO/GEO. Next.js 16 + TypeScript + Tailwind.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint app components lib"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.344.0",
-    "next": "^14.2.0",
+    "next": "^16.3.5",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "tailwind-merge": "^3.4.0"
@@ -24,8 +24,8 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "^14.2.0",
+    "eslint": "^9",
+    "eslint-config-next": "^16.3.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.0",
     "typescript": "^5"

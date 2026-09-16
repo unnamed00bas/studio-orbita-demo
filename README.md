@@ -14,7 +14,7 @@
 
 > **Зачем этот репозиторий.** Открытый proof-of-work автора [PROMAREN](https://promaren.ru) — упрощённый публичный клон стека, на котором построены коммерческие AI-проекты студии. Боевой код под NDA; здесь — фиктивный бренд «Студия Орбита», но **архитектурные решения, паттерны кода и инфраструктура — рабочие**. Можно склонировать, прочитать [Design decisions](#design-decisions--почему-так) и запустить локально за минуту. Все цены, кейсы и контакты в коде — условные.
 
-> **English TL;DR** — A multi-page demo site for a fictional studio brand, built with **Next.js 16 App Router**, **TypeScript** (strict), **Tailwind CSS**, and a streaming **AI consultant** powered by the **Anthropic Messages API** with prompt caching. Includes full technical SEO and **GEO (Generative Engine Optimization)** — JSON-LD (Organization, Article, Product, FAQPage, HowTo, BreadcrumbList), dynamic sitemap, and `robots.txt` with explicit allow for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, YandexBot). Built as an **open-source proof-of-work** by [Marina Pogodina](https://promaren.ru/about/), founder of [PROMAREN](https://promaren.ru) — 17 years in IT audit & InfoSec (Aeroflot, MTS, X5, Deloitte, PwC), now building ethical AI automation. All prices, cases, and contacts in this demo are fictional. MIT licensed. See [About the author](#-об-авторе).
+> **English TL;DR** — A multi-page demo site for a fictional studio brand, built with **Next.js 16 App Router**, **TypeScript** (strict), **Tailwind CSS**, and a streaming **AI consultant** powered by the **Anthropic Messages API** with prompt caching. Includes full technical SEO and **GEO (Generative Engine Optimization)** — JSON-LD (Organization, Article, Product, FAQPage, HowTo, BreadcrumbList), dynamic sitemap, and `robots.txt` with explicit allow for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, YandexBot). Built as an **open-source proof-of-work** by [Marina Pogodina](https://promaren.ru/about/), founder of [PROMAREN](https://promaren.ru) — 17 years in IT audit & InfoSec (Aeroflot, MTS, X5, Deloitte, PwC), now building ethical AI automation. All prices, cases, and contacts in this demo are fictional. MIT licensed. See [About the author](#об-авторе).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/unnamed00bas/studio-orbita-demo&env=ANTHROPIC_API_KEY&envDescription=Anthropic%20API%20key%20for%20the%20streaming%20AI%20consultant.%20Optional%20%E2%80%94%20without%20it%20the%20chat%20falls%20back%20to%20a%20stub%20response.&envLink=https://console.anthropic.com/)
 
@@ -161,7 +161,7 @@ Anthropic кэширует префикс запроса (system + tools + messa
 
 ### 5. Fail-soft AI-консультант
 
-Без `ANTHROPIC_API_KEY` чат не падает, а отвечает дружелюбной заглушкой и объясняет, что нужно настроить. Демки, которые ломаются на отсутствующих env-переменных, — типичная боль. Здесь любой может склонировать репо и запустить за минуту.
+Без `ANTHROPIC_API_KEY` чат отвечает заглушкой и объясняет, какую переменную задать. Демки, которые ломаются на отсутствующих env-переменных, — типичная боль. Здесь любой может склонировать репо и запустить за минуту.
 
 ```ts
 if (!apiKey) {
@@ -227,9 +227,9 @@ if (!apiKey) {
 - **17 лет** в ИТ и управлении технологическими рисками, из них **14 лет** в аудите ИТ и внутреннем контроле
 - **Более 60 аудитов** ИТ и информационной безопасности для компаний топ-100
 - SOX, COBIT 2019, ISO/IEC 27001, 152-ФЗ, GDPR; работа со стороной регулятора и с BIG4
-- Отсюда привычка, видная и в этом демо: логи, разметка и проверки закладываются сразу, а не после первого разбора инцидента
+- Отсюда привычка, видная и в этом демо: логи, разметка и проверки закладываются с первого коммита, до первого разбора инцидента
 
-### Условия работы — до договора, а не после
+### Условия работы — до подписания договора
 
 | Показание | Значение |
 |---|---|
@@ -246,7 +246,7 @@ if (!apiKey) {
 ### Что показывает этот репозиторий работодателю
 
 - Я закрываю стек **от архитектуры до деплоя** в одиночку: Next.js 16 App Router (RSC + SSE) · TypeScript strict · Anthropic Messages API с prompt caching · полный технический SEO + GEO под AI-поисковики.
-- Каждое решение [объяснено в README](#design-decisions--почему-так): почему SSE, а не WebSocket; почему детерминированный системный промпт; почему RSC по умолчанию — это не догма, а измеримый First Load JS.
+- Каждое решение [объяснено в README](#design-decisions--почему-так): почему SSE вместо WebSocket; почему детерминированный системный промпт; почему RSC по умолчанию — из-за измеримого First Load JS.
 - Код — production-grade: strict TS, fail-soft API без ключа, типизированные JSON-LD генераторы, секьюрити-заголовки, чистый `tsc --noEmit`.
 
 ### Контакты

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Карточка PROMAREN</title>
+<!--
+  Мастер-шаблон карточек для соцсетей. Один файл на все размеры: формат
+  задаётся классом на <body>, содержимое — объектом window.CARD, который
+  подставляет scripts/build-social-card.mjs вместе со шрифтами и знаком.
+
+  Правила — брендбук, раздел 15: графит, обозначение служебным голосом
+  сверху слева, заголовок дисплейным, одно показание янтарём, знак белым
+  снизу слева, волос над знаком. Второго цвета акцента нет, фотографий нет,
+  эмодзи нет.
+
+  Размеры (px):
+    feed     1080 × 1350  — лента Telegram, VK, LinkedIn; слайды карусели
+    story    1080 × 1920  — сторис, обложка Shorts; текст в средних 60%
+    og       1200 × 630   — превью для ссылок
+    yt       1280 × 720   — обложка YouTube
+    post     1600 × 900   — обложка поста канала (MAX, Telegram): 16:9, как
+                            рамка ленты на сайте
+
+  Виды содержимого (kind):
+    readout   — показание: value + label, ниже заголовок
+    statement — заголовок и абзац
+    quote     — цитата с засечкой (рубрики «Отказ», «Условия»)
+    link      — последний слайд карусели: заголовок и один адрес
+    cover     — превью для ссылок: знак по центру и одно предложение (только og)
+-->
+<style>
+{{FONTS_CSS}}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0C0F13; color: #FFFFFF; }
+body {
+  font-family: "Inter", Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+body.feed  { width: 1080px; height: 1350px; padding: 84px 84px 72px; font-size: 40px; }
+/* Сторис: верхние 220px и нижние 200px прячутся под интерфейс площадки —
+   обозначение, текст и знак стоят ниже и выше этих зон. */
+body.story { width: 1080px; height: 1920px; padding: 230px 84px 210px; font-size: 40px; }
+body.og    { width: 1200px; height: 630px;  padding: 56px 72px 48px;  font-size: 30px; }
+body.yt    { width: 1280px; height: 720px;  padding: 64px 80px 56px;  font-size: 34px; }
+/* Обложка поста канала. 16:9 — ровно то соотношение, в котором картинку
+   показывает и сам канал, и лента канала на сайте: вертикальную обложку
+   площадка обрезает до верхней полосы вместе с впечатанным текстом. */
+body.post  { width: 1600px; height: 900px;  padding: 80px 100px 70px; font-size: 42px; }
+
+.mark {
+  font-family: "Martian Mono", monospace;
+  font-variation-settings: "wdth" 75;
+  font-weight: 400;
+  font-size: 0.62em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #939EAE;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  line-height: 1.2;
+}
+.mark::before { content: ""; width: 2px; height: 0.9em; background: #E8A33B; }
+.mark:empty { display: none; }
+
+.main { display: grid; align-content: center; gap: 0.9em; min-width: 0; }
+
+.title {
+  font-family: "Martian Mono", monospace;
+  font-variation-settings: "wdth" 87.5;
+  font-weight: 500;
+  font-size: 1.7em;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+body.og .title, body.yt .title, body.post .title { font-size: 2em; }
+
+.value {
+  font-family: "Martian Mono", monospace;
+  font-variation-settings: "wdth" 87.5;
+  font-weight: 500;
+  font-size: 4.2em;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #E8A33B;
+  margin: 0;
+  white-space: nowrap;
+}
+body.story .value { font-size: 3.6em; }
+body.yt .value, body.og .value, body.post .value { font-size: 3.4em; }
+/* Длинное показание («от 200 000 ₽») в полный кегль не помещается —
+   уменьшаем, а не переносим: рубль на отдельной строке читается как ошибка. */
+.value.long { font-size: 3em; }
+body.story .value.long { font-size: 2.6em; }
+body.yt .value.long, body.og .value.long, body.post .value.long { font-size: 2.4em; }
+.label { color: #939EAE; font-size: 0.85em; line-height: 1.4; margin: 0; max-width: 24ch; }
+.body { color: #939EAE; font-size: 0.85em; line-height: 1.45; margin: 0; max-width: 30ch; }
+.title + .body { color: #FFFFFF; }
+
+.quote {
+  border-left: 2px solid #E8A33B;
+  padding-left: 0.9em;
+  font-size: 1.15em;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 26ch;
+}
+
+.link {
+  font-family: "Martian Mono", monospace;
+  font-variation-settings: "wdth" 87.5;
+  font-weight: 500;
+  font-size: 1.05em;
+  color: #E8A33B;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #2A3441;
+  padding-top: 0.9em;
+}
+.foot .logo { width: 7.2em; aspect-ratio: 1938 / 262; background: url("{{LOGO_WHITE}}") no-repeat left center / contain; }
+.foot .aside {
+  font-family: "Martian Mono", monospace;
+  font-variation-settings: "wdth" 75;
+  font-size: 0.6em;
+  letter-spacing: 0.12em;
+  color: #939EAE;
+}
+
+/* Превью для ссылок: знак по центру и одно предложение — брендбук, раздел 15 */
+body.og.center { grid-template-rows: 1fr auto 1fr; row-gap: 1.2em; text-align: center; justify-items: center; }
+body.og.center .mark, body.og.center .foot { display: none; }
+body.og.center .logo-big { width: 46%; aspect-ratio: 1938 / 262; background: url("{{LOGO_WHITE}}") no-repeat center / contain; align-self: end; }
+body.og.center .dot { width: 8%; height: 2px; background: #2A3441; position: relative; align-self: center; }
+body.og.center .dot::after { content: ""; position: absolute; left: 50%; top: -4px; width: 10px; height: 10px; border-radius: 50%; background: #0573B8; transform: translateX(-50%); }
+body.og.center .sentence { align-self: start; color: #939EAE; font-size: 1.15em; margin: 0; max-width: 34ch; }
+</style>
+</head>
+<body class="feed">
+<p class="mark" id="mark"></p>
+<div class="main" id="main"></div>
+<div class="foot"><div class="logo" role="img" aria-label="PROMAREN"></div><span class="aside" id="aside"></span></div>
+<script>
+(function () {
+  var c = window.CARD || {};
+  var esc = function (s) { return String(s == null ? "" : s); };
+  document.body.className = (c.format || "feed") + (c.kind === "cover" ? " center" : "");
+  var mark = document.getElementById("mark");
+  var main = document.getElementById("main");
+  var aside = document.getElementById("aside");
+  var el = function (tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = esc(text); return e; };
+  var value = function (text) { return el("p", "value" + (String(text).length > 8 ? " long" : ""), text); };
+
+  if (c.kind === "cover") {
+    document.body.innerHTML = "";
+    document.body.appendChild(el("div", "logo-big"));
+    document.body.appendChild(el("div", "dot"));
+    document.body.appendChild(el("p", "sentence", c.title || "Снимаем с людей ручную работу"));
+    document.documentElement.setAttribute("data-ready", "1");
+    return;
+  }
+
+  mark.textContent = esc(c.mark);
+  aside.textContent = esc(c.aside);
+
+  switch (c.kind) {
+    case "readout":
+      if (c.value) main.appendChild(value(c.value));
+      if (c.label) main.appendChild(el("p", "label", c.label));
+      if (c.title) main.appendChild(el("h1", "title", c.title));
+      if (c.body) main.appendChild(el("p", "body", c.body));
+      break;
+    case "quote":
+      if (c.title) main.appendChild(el("h1", "title", c.title));
+      if (c.body) main.appendChild(el("p", "quote", c.body));
+      break;
+    case "link":
+      if (c.title) main.appendChild(el("h1", "title", c.title));
+      if (c.body) main.appendChild(el("p", "body", c.body));
+      if (c.url) main.appendChild(el("p", "link", c.url));
+      break;
+    default: // statement
+      if (c.title) main.appendChild(el("h1", "title", c.title));
+      if (c.body) main.appendChild(el("p", "body", c.body));
+      if (c.value) main.appendChild(value(c.value));
+      if (c.label) main.appendChild(el("p", "label", c.label));
+  }
+  document.documentElement.setAttribute("data-ready", "1");
+})();
+</script>
+</body>
+</html>

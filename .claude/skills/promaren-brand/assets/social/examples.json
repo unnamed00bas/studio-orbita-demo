@@ -1,0 +1,85 @@
+[
+  {
+    "out": "feed-readout.png",
+    "format": "feed",
+    "kind": "readout",
+    "mark": "Показание недели",
+    "value": "108 417",
+    "label": "просмотров за 28 дней, старт с 12 подписчиков",
+    "title": "Без съёмок и рекламного бюджета",
+    "aside": "promaren.ru/cases/eko-friend"
+  },
+  {
+    "out": "feed-terms.png",
+    "format": "feed",
+    "kind": "statement",
+    "mark": "Условия",
+    "title": "Проекты дешевле 150 000 ₽ не берём",
+    "body": "В меньший бюджет не помещаются ни обследование, ни документация, ни гарантия.",
+    "aside": "promaren.ru/prices"
+  },
+  {
+    "out": "carousel-1.png",
+    "format": "feed",
+    "kind": "quote",
+    "mark": "Отказ",
+    "title": "Вчера отказали клиенту с бюджетом в 2 миллиона",
+    "body": "Он хотел сайт-визитку «как у конкурента»: без продукта, без воронки, без данных.",
+    "aside": "1 / 3"
+  },
+  {
+    "out": "carousel-2.png",
+    "format": "feed",
+    "kind": "readout",
+    "mark": "Отказ",
+    "value": "от 200 000 ₽",
+    "label": "мини-приложение вместо сайта-визитки",
+    "title": "Обследование показало: руками делают приём заявок",
+    "aside": "2 / 3"
+  },
+  {
+    "out": "carousel-3.png",
+    "format": "feed",
+    "kind": "link",
+    "mark": "Что дальше",
+    "title": "Если задача не наша — говорим сразу",
+    "body": "Подбор за шесть вопросов, ответ сразу на экране.",
+    "url": "promaren.ru/navigator",
+    "aside": "3 / 3"
+  },
+  {
+    "out": "story-terms.png",
+    "format": "story",
+    "kind": "readout",
+    "mark": "Чем рискуем",
+    "value": "минус 20%",
+    "label": "стоимости этапа при просрочке по нашей вине",
+    "title": "Условие договора, а не жест доброй воли",
+    "aside": "promaren.ru"
+  },
+  {
+    "out": "og-cover.png",
+    "format": "og",
+    "kind": "cover",
+    "title": "Снимаем с людей ручную работу"
+  },
+  {
+    "out": "yt-cover.png",
+    "format": "yt",
+    "kind": "readout",
+    "mark": "Что будет, если мы разойдёмся",
+    "value": "50 / 50",
+    "label": "перед этапом и после приёмки",
+    "title": "Код и доступы уже ваши",
+    "aside": "8:40"
+  },
+  {
+    "out": "post-terms.png",
+    "format": "post",
+    "kind": "statement",
+    "mark": "Условия",
+    "title": "Цену и срок называем до договора",
+    "body": "Просрочили этап — стоимость работ уменьшается на 20%. Пункт 3.2 договора.",
+    "aside": "promaren.ru/prices"
+  }
+]
